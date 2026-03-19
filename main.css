@@ -38,7 +38,8 @@ background: linear-gradient(0deg, rgba(148, 212, 99, 1) 0%, rgba(86, 129, 66, 1)
     }
 
     .container {
-        width: 1400px;
+        max-width: 1000px;
+width: 100%;
         margin: 0 auto;
     }
     header {
