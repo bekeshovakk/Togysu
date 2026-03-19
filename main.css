@@ -5,13 +5,33 @@
   }
 
   .container {
+    max-width: 1400px;
     width: 100%;
-    padding: 10px;
+    margin: 0 auto;
+    padding: 0 15px;
   }
 
   img {
     width: 100%;
     height: auto;
+  }
+    .hero--info {
+    width: 100%;
+  }
+
+  .hero img {
+    position: static;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .container-trending .games {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container-trending .games .block {
+    width: 100%;
+    margin-bottom: 20px;
   }
 }
 * {
