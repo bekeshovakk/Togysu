@@ -291,7 +291,7 @@ font-size: 30px;
         flex-wrap: wrap; 
         justify-content: flex-start;
         column-gap: 10px;
-        row-gap: 14px; /* чтобы переносимые пункты не "липли" к предыдущей строке */
+        row-gap: 14px; 
     }
 
     .hero {
@@ -322,8 +322,6 @@ font-size: 30px;
         padding: 12px 22px;
     }
 
-    /* Картинка через file:/// на телефоне может быть битой,
-       поэтому на мобильном экране она не мешает верстке */
     .hero img {
         display: none;
     }
