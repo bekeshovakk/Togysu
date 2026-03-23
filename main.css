@@ -15,8 +15,18 @@ font-size: 16px;
 } 
 a { text-decoration:none; }
 img {
-    max-width: 100%;
+    max-width:100%;
     height: auto;
+}
+
+/* Чтобы мобильные браузеры не масштабировали страницу и текст */
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    overflow-x: hidden;
 }
 
     .wrapper { 
@@ -311,16 +321,10 @@ font-size: 30px;
         padding: 12px 22px;
     }
 
+    /* Картинка через file:/// на телефоне может быть битой,
+       поэтому на мобильном экране она не мешает верстке */
     .hero img {
-        position: relative;
-        top: auto;
-        right: auto;
-        width: 100%;
-        max-width: 420px;
-        margin: 24px auto 0;
         display: none;
-        transition: none;
-        transform: none;
     }
 
     .container-trending {
@@ -346,11 +350,6 @@ font-size: 30px;
 
     .container-trending .games .block {
         width: 100%;
-        max-width: 450px;
-    }
-
-    .container-trending .games .block img {
-        height: auto;
         max-width: 450px;
     }
 
@@ -406,12 +405,5 @@ font-size: 30px;
     .teg span {
         font-size: 20px;
         margin: 5px 0;
-    }
-}
-
-@media (max-width: 500px) {
-    /* На телефонах путь вида file:///C:/... не работает — чтобы не показывать битую картинку */
-    .hero img {
-        display: none;
     }
 }
