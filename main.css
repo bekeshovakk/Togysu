@@ -69,17 +69,7 @@ background: linear-gradient(0deg, rgba(148, 212, 99, 1) 0%, rgba(86, 129, 66, 1)
         text-decoration: none;
         color:#fff;
     }
-    header nav ul li.active::after {
-        content: '';
-        display:block;
-        width: 40px;
-        height: 5px;
-        background:#faa107;
-        border-radius: 10px;
-        position: relative;
-        top: 10px;
-        left:-15px;
-    }
+   
     header nav ul li:not(.active):not(.btn) a:hover {
 border-bottom: 5px solid #faa107;
     }
