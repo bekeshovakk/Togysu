@@ -15,7 +15,9 @@ font-size: 16px;
 } 
 a { text-decoration:none; }
 img {
-    max-width:30%; }
+    max-width: 100%;
+    height: auto;
+}
 
     .wrapper { 
     background: #94d463;
@@ -24,8 +26,11 @@ background: linear-gradient(0deg, rgba(148, 212, 99, 1) 0%, rgba(86, 129, 66, 1)
     }
 
     .container {
-        width: 1400px;
+        width: 100%;
+        max-width: 1400px;
         margin: 0 auto;
+        padding: 0 16px;
+        box-sizing: border-box;
     }
     header {
         padding: 50px 0
@@ -141,7 +146,7 @@ transform: scale(1.10);}
     padding-top: 50px ;
 }
 .container-trending h3 {
-    font-weight:800;
+    font-weight:600;
     font-size: 31px;  
     text-transform: uppercase;
 }
@@ -177,7 +182,7 @@ font-size: 30px; }
         margin-right: 7px;
     }
     .big-text h2 {
-        margin-top: ;
+        margin-top: 0;
         text-align: center;
           font-weight:800;
     font-size: 31px;
@@ -261,9 +266,152 @@ font-size: 30px;
     margin: 5px 20px;
     color:#faa107;
  }
- @media (max-width: 500px) {
-    [class*="_container"] {
-        max-width: 81.25%;
-        margin: 0 auto;
+@media (max-width: 768px) {
+    header {
+        padding: 25px 0;
     }
- }
+
+    header nav {
+        float: none;
+        width: auto;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 12px;
+    }
+
+    .hero {
+        padding-bottom: 40px;
+    }
+
+    .hero--info {
+        width: auto;
+        padding-top: 30px;
+    }
+
+    .hero--info h2 {
+        font-size: 16px;
+    }
+
+    .hero--info h1 {
+        font-size: 28px;
+    }
+
+    .hero--info p {
+        margin: 16px 0;
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .hero--info .btn {
+        font-size: 15px;
+        padding: 12px 22px;
+    }
+
+    .hero img {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 100%;
+        max-width: 420px;
+        margin: 24px auto 0;
+        display: none;
+        transition: none;
+        transform: none;
+    }
+
+    .container-trending {
+        padding-top: 28px;
+    }
+
+    .container-trending h3 {
+        font-size: 22px;
+    }
+
+    .container-trending .see-all {
+        float: none;
+        margin-top: 12px;
+        width: fit-content;
+    }
+
+    .container-trending .games {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        padding: 24px 0;
+    }
+
+    .container-trending .games .block {
+        width: 100%;
+        max-width: 450px;
+    }
+
+    .container-trending .games .block img {
+        height: auto;
+        max-width: 450px;
+    }
+
+    .container-trending .games span {
+        font-size: 20px;
+        margin-top: 14px;
+    }
+
+    .big-text h2 {
+        font-size: 22px;
+    }
+
+    .big-text p {
+        font-size: 16px;
+        margin: 16px;
+        line-height: 1.8;
+    }
+
+    .banner {
+        padding: 40px 0;
+    }
+
+    .banner h2 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .banner p {
+        font-size: 16px;
+        margin: 16px;
+    }
+
+    .terms {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .rules span {
+        font-size: 16px;
+        margin: 10px 0;
+    }
+
+    .contacts {
+        margin-top: 40px;
+    }
+
+    .teg p {
+        font-size: 16px;
+        line-height: 1.4;
+        margin-bottom: 8px;
+    }
+
+    .teg span {
+        font-size: 20px;
+        margin: 5px 0;
+    }
+}
+
+@media (max-width: 500px) {
+    /* На телефонах путь вида file:///C:/... не работает — чтобы не показывать битую картинку */
+    .hero img {
+        display: none;
+    }
+}
