@@ -19,7 +19,6 @@ img {
     height: auto;
 }
 
-/* Чтобы мобильные браузеры не масштабировали страницу и текст */
 html {
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
@@ -69,10 +68,20 @@ background: linear-gradient(0deg, rgba(148, 212, 99, 1) 0%, rgba(86, 129, 66, 1)
         text-decoration: none;
         color:#fff;
     }
-   
+  /* header nav ul li.active::after {
+        content: '';
+        display:block;
+        width: 40px;
+        height: 5px;
+        background:#faa107;
+        border-radius: 10px;
+        position: relative;
+        top: 10px;
+        left:-15px;
+    } */
     header nav ul li:not(.active):not(.btn) a:hover {
 border-bottom: 5px solid #faa107;
-    }
+    } 
 
 header nav ul li.btn a{
    background:#faa107;
@@ -268,8 +277,8 @@ font-size: 30px;
  }
 @media (max-width: 768px) {
     header {
-        /* Вернем нормальный верхний отступ (Safari мог визуально "прижимать" контент) */
         padding: 50px 0;
+        margin-top: 50px;
     }
 
     header nav {
@@ -279,10 +288,10 @@ font-size: 30px;
 
     header nav ul {
         flex-direction: row;
-        flex-wrap: wrap; /* если не вмещается - переносим на следующую строку */
-        align-items: center;
+        flex-wrap: wrap; 
         justify-content: flex-start;
-        gap: 10px;
+        column-gap: 10px;
+        row-gap: 14px; /* чтобы переносимые пункты не "липли" к предыдущей строке */
     }
 
     .hero {
