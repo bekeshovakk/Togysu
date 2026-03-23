@@ -278,19 +278,21 @@ font-size: 30px;
  }
 @media (max-width: 768px) {
     header {
-        padding: 25px 0;
+        /* Вернем нормальный верхний отступ (Safari мог визуально "прижимать" контент) */
+        padding: 50px 0;
     }
 
     header nav {
         float: none;
-        width: auto;
+        width: 100%;
     }
 
     header nav ul {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap; /* если не вмещается - переносим на следующую строку */
+        align-items: center;
         justify-content: flex-start;
-        gap: 12px;
+        gap: 10px;
     }
 
     .hero {
