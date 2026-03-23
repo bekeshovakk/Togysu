@@ -261,3 +261,9 @@ font-size: 30px;
     margin: 5px 20px;
     color:#faa107;
  }
+ @media (max-width: 500px) {
+    [class*="_container"] {
+        max-width: 81.25%;
+        margin: 0 auto;
+    }
+ }
