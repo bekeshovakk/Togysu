@@ -15,18 +15,7 @@ font-size: 16px;
 } 
 a { text-decoration:none; }
 img {
-    max-width:100%;
-    height: auto;
-}
-
-html {
-    -webkit-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-}
-
-body {
-    overflow-x: hidden;
-}
+    max-width:30%; }
 
     .wrapper { 
     background: #94d463;
@@ -35,11 +24,8 @@ background: linear-gradient(0deg, rgba(148, 212, 99, 1) 0%, rgba(86, 129, 66, 1)
     }
 
     .container {
-        width: 100%;
-        max-width: 1400px;
+        width: 1400px;
         margin: 0 auto;
-        padding: 0 16px;
-        box-sizing: border-box;
     }
     header {
         padding: 50px 0
@@ -68,9 +54,20 @@ background: linear-gradient(0deg, rgba(148, 212, 99, 1) 0%, rgba(86, 129, 66, 1)
         text-decoration: none;
         color:#fff;
     }
+    header nav ul li.active::after {
+        content: '';
+        display:block;
+        width: 40px;
+        height: 5px;
+        background:#faa107;
+        border-radius: 10px;
+        position: relative;
+        top: 10px;
+        left:-15px;
+    }
     header nav ul li:not(.active):not(.btn) a:hover {
 border-bottom: 5px solid #faa107;
-    } 
+    }
 
 header nav ul li.btn a{
    background:#faa107;
@@ -101,48 +98,20 @@ header nav ul li.btn a:hover
     font-size:50px;
     font-weight:600;
 }
-
-.toggle-input {
-    display: none;
-}
-
-
-.more-text {
-    display: block;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: all 0.6s ease;
-}
-
-
-.toggle-input:checked ~ .text-content .more-text {
-    max-height: 500px; 
-    opacity: 1;
-    margin-top: 10px;
-}
-
-.toggle-input:checked ~ .btn {
-    display: none;
-}
-
 .hero--info p {
-    font-weight: 500;
+    font-weight:500;
     line-height: 170%;
-    margin: 30px 0;
+    margin: 30px;
 }
 
 .hero--info .btn {
-    display: inline-block;
-    background: #faa107;
-    color: #fff;
+    background:#faa107;
+    color:#fff;
     border-radius: 50px;
     padding: 15px 30px;
-    border: 0;
-    cursor: pointer; 
-    transition: all 500ms ease;
+    border:0;
+    transition: all 500ms ease ;
     font-size: 17px;
-    text-align: center;
 }
 .hero--info .btn:hover {
     cursor:pointer;
@@ -208,7 +177,7 @@ font-size: 30px; }
         margin-right: 7px;
     }
     .big-text h2 {
-        margin-top: 0;
+        margin-top: ;
         text-align: center;
           font-weight:800;
     font-size: 31px;
@@ -292,135 +261,3 @@ font-size: 30px;
     margin: 5px 20px;
     color:#faa107;
  }
-@media (max-width: 768px) {
-    header {
-        padding: 50px 0;
-    }
-
-    header nav {
-        float: none;
-        width: 100%;
-    }
-
-     header nav ul {
-        flex-direction: row;
-        flex-wrap: wrap; 
-        justify-content: flex-start;
-        column-gap: 10px;
-        row-gap: 14px; 
-        margin-top: 10px;
-    }
-
-    .hero {
-        padding-bottom: 40px;
-    }
-
-    .hero--info {
-        width: auto;
-        padding-top: 30px;
-    }
-
-    .hero--info h2 {
-        font-size: 16px;
-    }
-
-    .hero--info h1 {
-        font-size: 28px;
-    }
-
-    .hero--info p {
-        margin: 16px 0;
-        font-size: 15px;
-        line-height: 1.6;
-    }
-
-    .hero--info .btn {
-        font-size: 15px;
-        padding: 12px 22px;
-    }
-
-    .hero img {
-        display: none;
-    }
-
-    .container-trending {
-        padding-top: 28px;
-    }
-
-    .container-trending h3 {
-        font-size: 22px;
-    }
-
-    .container-trending .see-all {
-        float: none;
-        margin-top: 12px;
-        width: fit-content;
-        margin-bottom: 20px;
-    }
-
-    .container-trending .games {
-        flex-direction: column;
-        align-items: center;
-        gap: 24px;
-        padding: 24px 0;
-    }
-
-    .container-trending .games .block {
-        width: 100%;
-        max-width: 450px;
-    }
-
-    .container-trending .games span {
-        font-size: 20px;
-        margin-top: 14px;
-    }
-
-    .big-text h2 {
-        font-size: 22px;
-    }
-
-    .big-text p {
-        font-size: 16px;
-        margin: 16px;
-        line-height: 1.8;
-    }
-
-    .banner {
-        padding: 40px 0;
-    }
-
-    .banner h2 {
-        font-size: 22px;
-        margin-bottom: 20px;
-    }
-
-    .banner p {
-        font-size: 16px;
-        margin: 16px;
-    }
-
-    .terms {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .rules span {
-        font-size: 16px;
-        margin: 10px 0;
-    }
-
-    .contacts {
-        margin-top: 40px;
-    }
-
-    .teg p {
-        font-size: 16px;
-        line-height: 1.4;
-        margin-bottom: 8px;
-    }
-
-    .teg span {
-        font-size: 20px;
-        margin: 5px 0;
-    }
-}
