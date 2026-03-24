@@ -38,7 +38,7 @@ background: linear-gradient(0deg, rgba(148, 212, 99, 1) 0%, rgba(86, 129, 66, 1)
         width: 100%;
         max-width: 1400px;
         margin: 0 auto;
-        padding: 0 16px;
+        padding: 50 16px;
         box-sizing: border-box;
     }
     header {
