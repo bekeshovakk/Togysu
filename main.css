@@ -295,7 +295,11 @@ font-size: 30px;
     color:#faa107;
  }
 @media (max-width: 768px) {
-    header {
+    .container {
+    padding-left: 20px;
+    padding-right: 10px;
+}
+ header {
         padding: 50px 0;
     }
 
