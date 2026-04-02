@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
  
-
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +7,6 @@
   html {
     scroll-behavior: smooth;
 }
-
    body { 
 font-family: "Montserrat", sans-serif;
 font-weight: 400;
@@ -28,11 +26,11 @@ html {
 
 body {
     overflow-x: hidden;
-    background: linear-gradient(0deg, rgba(148, 212, 99, 1) 0%, rgba(86, 129, 66, 1) 36%, rgba(38, 66, 40, 1) 79%);
 }
 
     .wrapper { 
-    background: transparent;
+    background: #94d463;
+background: linear-gradient(0deg, rgba(148, 212, 99, 1) 0%, rgba(86, 129, 66, 1) 36%, rgba(38, 66, 40, 1) 79%);
  width: 100%;
     }
 
@@ -40,11 +38,11 @@ body {
         width: 100%;
         max-width: 1400px;
         margin: 0 auto;
-        padding: 0 16px;
+        padding: 50 16px;
         box-sizing: border-box;
     }
     header {
-        padding: 50px 0;
+        padding: 50px 0
     }
  header .logo {
     text-transform: uppercase;
@@ -69,9 +67,6 @@ body {
     header nav ul li a {
         text-decoration: none;
         color:#fff;
-        font-weight: 600;
-        letter-spacing: 0.2px;
-        transition: color 0.3s ease;
     }
     header nav ul li:not(.active):not(.btn) a:hover {
 border-bottom: 5px solid #faa107;
@@ -80,9 +75,8 @@ border-bottom: 5px solid #faa107;
 header nav ul li.btn a{
    background:#faa107;
    padding: 9px 17px;
-   border-radius: 999px;
+   border-radius: 5px;
    transition: all 500ms ease; 
-   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
 }
 header nav ul li.btn a:hover 
 { background:#a44e08; }
@@ -106,8 +100,6 @@ header nav ul li.btn a:hover
 .hero--info h1 {
     font-size:50px;
     font-weight:600;
-    line-height: 1.12;
-    text-wrap: balance;
 }
 
 .toggle-input {
@@ -138,7 +130,6 @@ header nav ul li.btn a:hover
     font-weight: 500;
     line-height: 170%;
     margin: 30px 0;
-    max-width: 65ch;
 }
 
 .hero--info .btn {
@@ -149,14 +140,13 @@ header nav ul li.btn a:hover
     padding: 15px 30px;
     border: 0;
     cursor: pointer; 
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    transition: all 500ms ease;
     font-size: 17px;
     text-align: center;
 }
 .hero--info .btn:hover {
     cursor:pointer;
-    transform: translateY(-2px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+    transform: scale(1.1);
 }
 
 .hero img {
@@ -174,10 +164,8 @@ transform: scale(1.10);}
      width: 100%;
      max-width: 450px;
      height: 310px;
-    border-radius: 20px;
+    border-radius: 30px;
     margin: 0 auto;
-    object-fit: cover;
-    transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 .container-trending {
@@ -193,10 +181,9 @@ transform: scale(1.10);}
     background:#0e2d0a;
     border-radius: 20px;
     padding:12px 23px;
-    float: left;
+    float:right;
     display: block;
     transition: all 500ms ease;
-    margin-top: 40px;
  }
     .container-trending .see-all:hover 
 { background:#a44e08; 
@@ -211,30 +198,12 @@ transform: scale(1.10);}
 .container-trending .games .block {
     width: 23.5%; 
     margin-bottom: 30px;
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 20px;
-    padding: 14px;
-    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.container-trending .games .block:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.24);
-}
-
-.container-trending .games .block:hover img {
-    transform: scale(1.03);
-    filter: saturate(1.05);
 }
 .container-trending .games span { 
     display:block;
     text-align: center;
     margin-top: 20px;
-font-size: 22px;
-line-height: 1.45; }
+font-size: 30px; }
     .container-trending .games span img {
         position:relative;
         top: 5px;
@@ -252,7 +221,7 @@ line-height: 1.45; }
      font-weight:700;
     line-height: 190%;
     margin: 30px;
-font-size: 24px; }
+font-size: 30px; }
 
 .banner {
     padding: 80px 0;
@@ -286,10 +255,8 @@ font-size: 20px;
     flex: 1;
     background:rgba(255, 255, 255, 0.1) ;
     padding: 20px;
-    border-radius: 16px;
+    border-radius: 10px;
     line-height: 1.5;
-    border: 1px solid rgba(255, 255, 255, 0.13);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
  }
  .rules span{
     display: block;
@@ -304,21 +271,19 @@ font-size: 30px;
     flex: 1;
     background:rgba(255, 255, 255, 0.1) ;
     padding: 20px;
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.13);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
  }
 .teg {
     flex: 1;
     background:rgba(255, 255, 255, 0.1) ;
     padding: 20px;
-    border-radius: 14px;
+    border-radius: 10px;
 }
  .teg p {
     color: #fff;
     font-size: 30px;
     font-weight: 700;
- margin-bottom: 0 ;
+ margin-bottom: 0;
  line-height: 1;
 
  }
@@ -329,47 +294,12 @@ font-size: 30px;
     margin: 5px 20px;
     color:#faa107;
  }
- .form-link {
-    flex: 1;
-    background:rgba(255, 255, 255, 0.1) ;
-    padding: 20px;
-    border-radius: 14px;
-    margin-top: 20px;
- }
-
-[data-reveal] {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-    will-change: opacity, transform;
-}
-
-[data-reveal].is-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
- .form-link p {
-color: #fff;
-    font-size: 30px;
-    font-weight: 700;
- margin-bottom: 0;
- line-height: 1;
-
- }
- .form-link span {
-     font-size: 40px;
-    font-weight: 700 ;
-    color: #fff;
-    margin: 5px 20px;
-    color:#faa107;
- }
- 
 @media (max-width: 768px) {
-.container {
+    .container {
     padding-left: 20px;
-    padding-right: 10px;
+    padding-right: 20px;
 }
-    header {
+ header {
         padding: 50px 0;
     }
 
@@ -401,7 +331,7 @@ color: #fff;
     }
 
     .hero--info h1 {
-        font-size: 32px;
+        font-size: 28px;
     }
 
     .hero--info p {
@@ -447,7 +377,7 @@ color: #fff;
     }
 
     .container-trending .games span {
-        font-size: 17px;
+        font-size: 20px;
         margin-top: 14px;
     }
 
@@ -456,7 +386,7 @@ color: #fff;
     }
 
     .big-text p {
-        font-size: 15px;
+        font-size: 16px;
         margin: 16px;
         line-height: 1.8;
     }
@@ -481,7 +411,7 @@ color: #fff;
     }
 
     .rules span {
-        font-size: 15px;
+        font-size: 16px;
         margin: 10px 0;
     }
 
@@ -490,23 +420,13 @@ color: #fff;
     }
 
     .teg p {
-        font-size: 15px;
+        font-size: 16px;
         line-height: 1.4;
         margin-bottom: 8px;
     }
 
     .teg span {
-        font-size: 18px;
-        margin: 5px 0;
-    }
-
-    .form-link p {
-        font-size: 15px;
-        line-height: 1.5;
-    }
-
-    .form-link span {
-        font-size: 18px;
+        font-size: 20px;
         margin: 5px 0;
     }
 }
