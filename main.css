@@ -274,7 +274,6 @@ transform: scale(1.10);}
     align-items: stretch;
 }
 
-/* Страница «все комментарии» (more.html): три колонки, больше отступа между рядами */
 .container-trending .games.games--all {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     row-gap: 28px;
@@ -557,8 +556,8 @@ color: #fff;
     .container-trending .games .block {
         width: 100%;
         max-width: 450px;
-        margin-left: auto;
-        margin-right: auto;
+        margin-left: 5px;
+        margin-right: 5px;
     }
 
     .container-trending .games span {
