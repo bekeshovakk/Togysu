@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
  
+
 * {
     margin: 0;
     padding: 0;
   }
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 88px;
 }
+
    body { 
 font-family: "Montserrat", sans-serif;
 font-weight: 400;
@@ -26,11 +29,11 @@ html {
 
 body {
     overflow-x: hidden;
+    background: linear-gradient(0deg, rgba(148, 212, 99, 1) 0%, rgba(86, 129, 66, 1) 36%, rgba(38, 66, 40, 1) 79%);
 }
 
     .wrapper { 
-    background: #94d463;
-background: linear-gradient(0deg, rgba(148, 212, 99, 1) 0%, rgba(86, 129, 66, 1) 36%, rgba(38, 66, 40, 1) 79%);
+    background: transparent;
  width: 100%;
     }
 
@@ -38,47 +41,94 @@ background: linear-gradient(0deg, rgba(148, 212, 99, 1) 0%, rgba(86, 129, 66, 1)
         width: 100%;
         max-width: 1400px;
         margin: 0 auto;
-        padding: 50 16px;
+        padding: 0 16px;
         box-sizing: border-box;
     }
-    header {
-        padding: 50px 0
+    .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background: rgba(38, 66, 40, 0.72);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(2, 2, 2, 0.12);
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+        transition: box-shadow 0.35s ease, background 0.35s ease;
     }
+
+    .site-header.is-scrolled {
+        background: rgba(28, 48, 28, 0.88);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.22);
+    }
+
+    .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px 20px;
+        padding: 14px 0;
+        min-height: 56px;
+    }
+
+    .site-header .id {
+        flex: 0 0 auto;
+    }
+
  header .logo {
     text-transform: uppercase;
-    font-size: 29;
+    font-size: 29px;
     font-weight: 800; }
-    header nav {
-        float: right;
-        width:50%;
+    .site-header nav {
+        float: none;
+        width: auto;
+        flex: 1 1 auto;
+        min-width: 0;
+        display: flex;
+        justify-content: flex-end;
     }
-    header nav ul {
+    .site-header nav ul {
         list-style: none;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        align-items: center;
+        column-gap: 12px;
+        row-gap: 10px;
         z-index: 2;
         position: relative;
     }
 
-    header nav ul li {
+    .site-header nav ul li {
         display:inline-block;
     }
 
-    header nav ul li a {
+    .site-header nav ul li a {
         text-decoration: none;
         color:#fff;
+        font-weight: 600;
+        letter-spacing: 0.2px;
+        transition: color 0.3s ease;
     }
-    header nav ul li:not(.active):not(.btn) a:hover {
+
+    .site-header nav ul li a:visited {
+        color: #fff;
+    }
+    .site-header nav ul li:not(.active):not(.btn) a:hover {
 border-bottom: 5px solid #faa107;
     } 
 
-header nav ul li.btn a{
+.site-header nav ul li.btn a{
    background:#faa107;
    padding: 9px 17px;
-   border-radius: 5px;
+   border-radius: 999px;
    transition: all 500ms ease; 
+   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
 }
-header nav ul li.btn a:hover 
+.site-header nav ul li.btn a:hover 
 { background:#a44e08; }
 
 .hero {
@@ -100,6 +150,8 @@ header nav ul li.btn a:hover
 .hero--info h1 {
     font-size:50px;
     font-weight:600;
+    line-height: 1.12;
+    text-wrap: balance;
 }
 
 .toggle-input {
@@ -130,6 +182,7 @@ header nav ul li.btn a:hover
     font-weight: 500;
     line-height: 170%;
     margin: 30px 0;
+    max-width: 65ch;
 }
 
 .hero--info .btn {
@@ -140,13 +193,14 @@ header nav ul li.btn a:hover
     padding: 15px 30px;
     border: 0;
     cursor: pointer; 
-    transition: all 500ms ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     font-size: 17px;
     text-align: center;
 }
 .hero--info .btn:hover {
     cursor:pointer;
-    transform: scale(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
 }
 
 .hero img {
@@ -164,46 +218,96 @@ transform: scale(1.10);}
      width: 100%;
      max-width: 450px;
      height: 310px;
-    border-radius: 30px;
+    border-radius: 20px;
     margin: 0 auto;
+    object-fit: cover;
+    transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 .container-trending {
     padding-top: 50px ;
 }
+
+.comments-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 8px;
+}
+
 .container-trending h3 {
     font-weight:600;
     font-size: 31px;  
     text-transform: uppercase;
+    margin: 0;
 }
 .container-trending .see-all {
     color: #fff;
     background:#0e2d0a;
     border-radius: 20px;
     padding:12px 23px;
-    float:right;
-    display: block;
+    float: none;
+    display: inline-block;
+    width: auto;
+    flex: 0 0 auto;
+    align-self: center;
     transition: all 500ms ease;
+    margin-top: 0;
+    margin-bottom: 0;
+    white-space: nowrap;
  }
     .container-trending .see-all:hover 
 { background:#a44e08; 
 transform: scale(1.10);}
+
+.container-trending .see-all:visited {
+    color: #fff;
+}
 .container-trending .games {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
     width:100%;
-    padding: 50px 0;
+    padding: 24px 0 50px;
+    align-items: stretch;
+}
+
+/* Страница «все комментарии» (more.html): три колонки, больше отступа между рядами */
+.container-trending .games.games--all {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    row-gap: 28px;
+    column-gap: 18px;
 }
 .container-trending .games .block {
-    width: 23.5%; 
-    margin-bottom: 30px;
+    width: auto;
+    min-width: 0;
+    margin-bottom: 0;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 14px;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.container-trending .games .block:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.24);
+}
+
+.container-trending .games .block:hover img {
+    transform: scale(1.03);
+    filter: saturate(1.05);
 }
 .container-trending .games span { 
     display:block;
     text-align: center;
     margin-top: 20px;
-font-size: 30px; }
+font-size: 22px;
+line-height: 1.45; }
     .container-trending .games span img {
         position:relative;
         top: 5px;
@@ -221,7 +325,7 @@ font-size: 30px; }
      font-weight:700;
     line-height: 190%;
     margin: 30px;
-font-size: 30px; }
+font-size: 24px; }
 
 .banner {
     padding: 80px 0;
@@ -255,8 +359,10 @@ font-size: 20px;
     flex: 1;
     background:rgba(255, 255, 255, 0.1) ;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 16px;
     line-height: 1.5;
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
  }
  .rules span{
     display: block;
@@ -271,19 +377,21 @@ font-size: 30px;
     flex: 1;
     background:rgba(255, 255, 255, 0.1) ;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
  }
 .teg {
     flex: 1;
     background:rgba(255, 255, 255, 0.1) ;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 14px;
 }
  .teg p {
     color: #fff;
     font-size: 30px;
     font-weight: 700;
- margin-bottom: 0;
+ margin-bottom: 0 ;
  line-height: 1;
 
  }
@@ -294,27 +402,98 @@ font-size: 30px;
     margin: 5px 20px;
     color:#faa107;
  }
-@media (max-width: 768px) {
-    .container {
-    padding-left: 20px;
-    padding-right: 20px;
+ .form-link {
+    flex: 1;
+    background:rgba(255, 255, 255, 0.1) ;
+    padding: 20px;
+    border-radius: 14px;
+    margin-top: 20px;
+ }
+
+[data-reveal] {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
 }
- header {
-        padding: 50px 0;
+
+[data-reveal].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.terms .rules[data-reveal]:nth-child(1) { transition-delay: 0.05s; }
+.terms .rules[data-reveal]:nth-child(2) { transition-delay: 0.12s; }
+.terms .rules[data-reveal]:nth-child(3) { transition-delay: 0.19s; }
+
+.container-trending .games .block[data-reveal]:nth-child(1) { transition-delay: 0.04s; }
+.container-trending .games .block[data-reveal]:nth-child(2) { transition-delay: 0.1s; }
+.container-trending .games .block[data-reveal]:nth-child(3) { transition-delay: 0.16s; }
+.container-trending .games .block[data-reveal]:nth-child(4) { transition-delay: 0.22s; }
+
+/* Узкое окно: 2×2 вместо одной строки из четырёх */
+@media (max-width: 1100px) {
+    .container-trending .games {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .container-trending .games.games--all {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    [data-reveal] {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+    .site-header {
+        transition: none;
+    }
+}
+ .form-link p {
+color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+ margin-bottom: 0;
+ line-height: 1;
+
+ }
+ .form-link span {
+     font-size: 40px;
+    font-weight: 700 ;
+    color: #fff;
+    margin: 5px 20px;
+    color:#faa107;
+ }
+ 
+@media (max-width: 768px) {
+    html {
+        scroll-padding-top: 72px;
     }
 
-    header nav {
-        float: none;
+.container {
+    padding-left: 20px;
+    padding-right: 10px;
+}
+    .site-header .header-inner {
+        padding: 12px 0;
+        align-items: flex-start;
+    }
+
+    .site-header nav {
         width: 100%;
+        justify-content: flex-start;
     }
 
-     header nav ul {
-        flex-direction: row;
-        flex-wrap: wrap; 
+    .site-header nav ul {
         justify-content: flex-start;
         column-gap: 10px;
-        row-gap: 14px; 
-        margin-top: 10px;
+        row-gap: 14px;
     }
 
     .hero {
@@ -331,7 +510,7 @@ font-size: 30px;
     }
 
     .hero--info h1 {
-        font-size: 28px;
+        font-size: 32px;
     }
 
     .hero--info p {
@@ -357,27 +536,34 @@ font-size: 30px;
         font-size: 22px;
     }
 
+    .comments-head {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
     .container-trending .see-all {
         float: none;
-        margin-top: 12px;
+        margin-top: 0;
         width: fit-content;
-        margin-bottom: 20px;
+        margin-bottom: 0;
+        align-self: flex-start;
     }
 
     .container-trending .games {
-        flex-direction: column;
-        align-items: center;
-        gap: 24px;
-        padding: 24px 0;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px 0 32px;
     }
 
     .container-trending .games .block {
         width: 100%;
         max-width: 450px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .container-trending .games span {
-        font-size: 20px;
+        font-size: 17px;
         margin-top: 14px;
     }
 
@@ -386,7 +572,7 @@ font-size: 30px;
     }
 
     .big-text p {
-        font-size: 16px;
+        font-size: 15px;
         margin: 16px;
         line-height: 1.8;
     }
@@ -411,7 +597,7 @@ font-size: 30px;
     }
 
     .rules span {
-        font-size: 16px;
+        font-size: 15px;
         margin: 10px 0;
     }
 
@@ -420,13 +606,23 @@ font-size: 30px;
     }
 
     .teg p {
-        font-size: 16px;
+        font-size: 15px;
         line-height: 1.4;
         margin-bottom: 8px;
     }
 
     .teg span {
-        font-size: 20px;
+        font-size: 18px;
+        margin: 5px 0;
+    }
+
+    .form-link p {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .form-link span {
+        font-size: 18px;
         margin: 5px 0;
     }
 }
