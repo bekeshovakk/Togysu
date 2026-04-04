@@ -432,13 +432,12 @@ font-size: 30px;
 .container-trending .games .block[data-reveal]:nth-child(3) { transition-delay: 0.16s; }
 .container-trending .games .block[data-reveal]:nth-child(4) { transition-delay: 0.22s; }
 
-/* Узкое окно: 2×2 вместо одной строки из четырёх */
 @media (max-width: 1100px) {
     .container-trending .games {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(1, minmax(0, 1fr));
     }
     .container-trending .games.games--all {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(1, minmax(0, 1fr));
     }
 }
 
@@ -478,7 +477,7 @@ color: #fff;
 
 .container {
     padding-left: 20px;
-    padding-right: 10px;
+    padding-right: 20px;
 }
     .site-header .header-inner {
         padding: 12px 0;
