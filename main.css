@@ -551,7 +551,7 @@ color: #fff;
     .container-trending .games {
         grid-template-columns: 1fr;
         gap: 20px;
-        padding: 20px 0 32px;
+        padding: 20px 0 0;
     }
 
     .container-trending .games .block {
